@@ -14,4 +14,6 @@ public class Dishes {
     private String dishType;
     private int price;
 
+    private Restaurant restaurant;
+
 }

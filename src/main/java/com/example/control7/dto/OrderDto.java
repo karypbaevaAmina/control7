@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class OrderDto {
 
-    private Long id;
+    private int id;
     private Client client;
     private Dishes dish;
     private LocalDateTime dateTime;

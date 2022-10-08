@@ -1,7 +1,6 @@
 package com.example.control7.dao;
 
-import com.example.control7.dto.RestaurantDto;
-import com.example.control7.entity.Restaurant;
+import com.example.control7.dto.DishesDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,19 +12,14 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class RestaurantDao {
-
+public class DishesDao {
     private final JdbcTemplate jdbcTemplate;
     private final PasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    public List<Restaurant> findAll() {  // список заведений
-        String sql = "select * from restaurant";
-        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Restaurant.class));
+    public List<DishesDto> findDishesByID(Long id){
+        String sql = "select * \n" +
+                "from dishes \n" +
+                "where restaurant = ?;";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(DishesDto.class), id);
     }
-
-
-
-
-
-
 }

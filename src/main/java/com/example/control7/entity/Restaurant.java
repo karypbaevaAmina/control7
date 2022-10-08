@@ -15,6 +15,8 @@ public class Restaurant {
     private Long id;
     private String placeName;
     private String description;
-    private List<GenerateData.DishName> dishNames;
+    private List<String> dishNames = List.of("pizza", "pasta","eggs","soup");
+    //    private List<GenerateData.DishName> dishNames;
+
 
 }

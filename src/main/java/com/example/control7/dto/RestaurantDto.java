@@ -26,5 +26,7 @@ public class RestaurantDto {
     private Long id;
     private String placeName;
     private String description;
-    private List<GenerateData.DishName> dishNames;
+    private  List<String> dishNames;
+//    private List<GenerateData.DishName> dishNames;
+
 }
