@@ -18,10 +18,11 @@ public class ClientDao {
     private final JdbcTemplate jdbcTemplate;
 
 
-    public void create(Client client) {
+    public String create(Client client) {
         String sql = "insert into client (id, name, email, password, enabled) " +
                 "values (?,?,?,?, true);";
         jdbcTemplate.update(sql,client.getId(), client.getName(), client.getEmail(), client.getPassword());
+        return sql;
     }
 
     public String makeOrder (OrderDto orderDto) {

@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Dishes {
 
-    private Long id;
+    private int id;
     private String dishName;
     private String dishType;
     private int price;

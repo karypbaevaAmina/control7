@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 public class DishesDto {
 
-    private Long id;
+    private int id;
     private String dishName;
     private String dishType;
     private int price;

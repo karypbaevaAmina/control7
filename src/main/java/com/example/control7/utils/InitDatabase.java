@@ -25,8 +25,8 @@ public class InitDatabase {
     public CommandLineRunner fillData() {
         return (args) -> {
 
-//            orderDao.saveOrder(Order.builder().id(1L).dish(1L).planedDate(LocalDateTime.now());
-//            orderDao.saveOrder(Order.builder().id(2L).dish(2L).planedDate(LocalDateTime.now());
+//            orderDao.saveOrder(Order.builder().id(1L).dish(1)).planedDate(LocalDateTime.now());
+////            orderDao.saveOrder(Order.builder().id(2L).dish(2L).planedDate(LocalDateTime.now());
 
 
             Client client1 = new Client();

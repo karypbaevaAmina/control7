@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/database/**").fullyAuthenticated();
+                .antMatchers(HttpMethod.POST, "/database/**",
+                        "/users/**").fullyAuthenticated();
         http.authorizeRequests()
                 .anyRequest()
                 .permitAll();
