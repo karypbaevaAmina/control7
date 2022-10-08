@@ -17,6 +17,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+import static java.lang.Integer.valueOf;
+
 @Component
 @RequiredArgsConstructor
 public class OrderDao {
@@ -37,7 +39,7 @@ public class OrderDao {
             PreparedStatement ps = con.prepareStatement(sql, new String[]{"id"});
             ps.setLong(1, id);
 //            ps.setString(2, email);
-            ps.setInt(2, dish);
+            ps.setInt(2, valueOf(dish));
             ps.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
             return ps;
         }, keyHolder);

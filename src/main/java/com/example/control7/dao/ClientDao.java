@@ -22,15 +22,25 @@ public class ClientDao {
         String sql = "insert into client (id, name, email, password, enabled) " +
                 "values (?,?,?,?, true);";
         jdbcTemplate.update(sql,client.getId(), client.getName(), client.getEmail(), client.getPassword());
-        return sql;
+        createAuthority(client.getName());
+        return "Регистрация прошла успешно!";
     }
 
-    public String makeOrder (OrderDto orderDto) {
-        String query = "INSERT INTO orders(id, dish, order_date_time )\n" +
-                "VALUES(?,?,?,?)";
-        jdbcTemplate.update(query, orderDto.getId(), orderDto.getClient(), orderDto.getDish(), LocalDateTime.now());
-        return "Заказ сделан!";
+    private void createAuthority(String name) {
+        var userID =  getIdByClientName(name);
+        String query = "INSERT INTO authority(client, authority)" +
+                "VALUES(?, 'ROLE_USER')";
+        jdbcTemplate.update(query, userID);
     }
+
+    public Long getIdByClientName(String name) {
+        String query = "SELECT id FROM client WHERE name = ?";
+        return jdbcTemplate.queryForObject(query, Long.class, name);
+    }
+
+
+
+
 
 
 

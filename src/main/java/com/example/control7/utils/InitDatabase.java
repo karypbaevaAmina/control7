@@ -25,7 +25,7 @@ public class InitDatabase {
     public CommandLineRunner fillData() {
         return (args) -> {
 
-//            orderDao.saveOrder(Order.builder().id(1L).dish(1)).planedDate(LocalDateTime.now());
+//            orderDao.saveOrder(Order.builder().id(1L).dish(1).planedDate(LocalDateTime.now());
 ////            orderDao.saveOrder(Order.builder().id(2L).dish(2L).planedDate(LocalDateTime.now());
 
 
@@ -36,12 +36,12 @@ public class InitDatabase {
             client1.setPassword(encoder.encode("test"));
             clientDao.create(client1);
 
-            Client client2 = new Client();
-            client2.setId(2L);
-            client2.setEmail("admin@test");
-            client2. setName("test");
-            client2.setPassword(encoder.encode("test"));
-            clientDao.create(client2);
+//            Client client2 = new Client();
+//            client2.setId(2L);
+//            client2.setEmail("admin@test");
+//            client2. setName("test");
+//            client2.setPassword(encoder.encode("test"));
+//            clientDao.create(client2);
 
 
 
